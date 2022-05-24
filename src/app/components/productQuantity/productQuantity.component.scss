@@ -1,0 +1,92 @@
+.raqn-productquantity {
+	display: flex;
+	align-items: center;
+
+	--productquantity-content-height: 30px;
+	--productquantity-content-padding: var(--scope-layout-cta-padding, 10px 15px);
+	--productquantity-content-border-radius: 10px;
+	--productquantity-content-border: none;
+	--productquantity-content-background: var(--scope-color-accent1, #FFF);
+	--productquantity-counter-size: 14px; /* todo - add typography */
+	--productquantity-counter-color: var(--scope-color-accent1-text, #000);
+	--productquantity-buttons-color: var(--scope-color-accent1-text, #000);
+	--productquantity-counter-margins: var(--scope-layout-cta-padding, 10px 15px);
+	--icon-size: var(--productquantity-content-height, 24px);
+
+	&--outline {
+
+		--productquantity-content-border: 1px solid var(--scope-color-accent1, #000);
+		--productquantity-content-background: var(--scope-color-accent1-text, #000);
+		--productquantity-content-border-radius: 0px;
+		--productquantity-counter-size: 16px; /* todo - add typography */
+		--productquantity-counter-color: var(--scope-color-accent1, #000);
+		--productquantity-buttons-color: var(--scope-color-accent1, #000);
+
+		.raqn-productquantity__btn {
+			&--add::before,
+			&--subtract::after {
+				content: "";
+				top: 0;
+				height: 100%;
+				width: 1px;
+				position: absolute;
+			}
+
+			&--add::before {
+				left: -20px;
+			}
+
+			&--subtract::after {
+				right: -20px;
+			}
+
+			&--trash {
+				--icon-color: var(--productquantity-buttons-color);
+			}
+		}
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: var(--productquantity-content-height);
+		padding: var(--productquantity-content-padding);
+		border-radius: var(--productquantity-content-border-radius);
+		border: var(--productquantity-content-border);
+		background: var(--productquantity-content-background);
+	}
+
+	&__btn {
+		position: relative;
+		background: none;
+		color: inherit;
+		border: none;
+		padding: 0;
+		font: inherit;
+		cursor: pointer;
+		outline: inherit;
+		min-width: 24px;
+		min-height: 24px;
+		font-size: 24px;
+		color: var(--productquantity-buttons-color);
+		--scope-icon-color: var(--productquantity-buttons-color);
+
+		&--hidden {
+			visibility: hidden;
+		}
+
+		&--trash {
+			margin-right: 24px;
+			padding: var(--productquantity-content-padding);
+			--scope-icon-color: var(--productquantity-content-background);
+		}
+	}
+
+	&__counter {
+		font-size: 14px; /* todo - add typography */
+		font-weight: bold;
+		margin: var(--productquantity-counter-margins);
+		color: var(--productquantity-counter-color);
+	}
+}

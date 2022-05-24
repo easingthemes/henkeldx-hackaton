@@ -1,0 +1,11 @@
+heliux-icon {
+    min-width: var(--scope-icon-size, 24px);
+    min-height: var(--scope-icon-size, 24px);
+    display: inline-block;
+
+    svg {
+        fill: var(--scope-icon-color);
+        min-width: var(--scope-icon-size,24px);
+        min-height: var(--scope-icon-size,24px);
+    }
+}

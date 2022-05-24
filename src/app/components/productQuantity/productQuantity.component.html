@@ -1,0 +1,21 @@
+<div *ngIf="removeOnly; else elseBlock" [ngClass]="['raqn-productquantity', 'raqn-productquantity--' + theme]">
+    <button (click)="remove()" class="raqn-productquantity__btn raqn-productquantity__btn--trash">
+      <raqn-icon icon="close"></raqn-icon>
+    </button>
+</div>
+<ng-template #elseBlock>
+    <div [ngClass]="['raqn-productquantity', 'raqn-productquantity--' + theme]">
+        <button *ngIf="withRemove" (click)="remove()" class="raqn-productquantity__btn raqn-productquantity__btn--trash">
+            <raqn-icon icon="close"></raqn-icon>
+        </button>
+        <div class="raqn-productquantity__content">
+            <button (click)="subtract()" [disabled]="counter <= 1" class="raqn-productquantity__btn raqn-productquantity__btn--subtract">
+                <raqn-icon icon="next"></raqn-icon>
+            </button>
+            <div class="raqn-productquantity__counter">{{ counter }}</div>
+            <button (click)="add()" class="raqn-productquantity__btn raqn-productquantity__btn--add">
+                <raqn-icon icon="play"></raqn-icon>
+            </button>
+        </div>
+    </div>
+</ng-template>
