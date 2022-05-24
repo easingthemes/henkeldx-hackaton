@@ -1,4 +1,4 @@
-# henkeldx-hackaton
+# henkeldx-hackathon
 
 ## Install dependencies
 ```
